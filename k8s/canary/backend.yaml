@@ -16,7 +16,10 @@ spec:
         app: flask
     spec:
       containers:
-      - image: gcr.io/general-218816/flask:master.999
+      - image: gcr.io/general-218816/flask:master.444
         name: backend
         resources: {}
+        ports:
+        - name: http
+          containerPort: 80
 status: {}

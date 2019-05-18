@@ -6,6 +6,6 @@ def hello_world():
     return 'Flask Dockerized'
 
 if __name__ == '__main__':
-    app.run(debug=False, host='0.0.0.0', port=80)
+    app.run(debug=False, host='0.0.0.0')
 
     
