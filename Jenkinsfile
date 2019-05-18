@@ -5,7 +5,7 @@ def  imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUM
 
 pipeline {
     triggers {
-        cron('* * * * *')
+        pollSCM('* * * * *')
     }
   agent {
     kubernetes {
