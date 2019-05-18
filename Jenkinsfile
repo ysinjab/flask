@@ -72,7 +72,7 @@ spec:
       steps{
         container('kubectl') {
         // Change deployed image in canary to the one we just built
-          sh("sed -i.bak 's#gcr.io/general-218816/flask:master.444${imageTag}#' ./k8s/production/*.yaml")
+          sh("sed -i.bak 's#gcr.io/general-218816/flask:master.444#${imageTag}#' ./k8s/production/*.yaml")
           sh("kubectl --namespace=production apply -f k8s/services/")
           sh("kubectl --namespace=production apply -f k8s/production/")
           sh("echo http://`kubectl --namespace=production get service/${feSvcName} -o jsonpath='{.status.loadBalancer.ingress[0].ip}'` > ${feSvcName}")
