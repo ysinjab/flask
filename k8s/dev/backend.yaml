@@ -1,0 +1,21 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: backend
+spec:
+  replicas: 1
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        role: backend
+        env: dev
+        app: flask
+    spec:
+      containers:
+      - image: gcr.io/general-218816/flask:master.999
+        name: backend
+        resources: {}
+status: {}
