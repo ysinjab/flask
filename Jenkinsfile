@@ -4,6 +4,9 @@ def  feSvcName = "flask-backend"
 def  imageTag = "gcr.io/${project}/${appName}:${env.BRANCH_NAME}.${env.BUILD_NUMBER}"
 
 pipeline {
+    triggers {
+        cron('* * * * *')
+    }
   agent {
     kubernetes {
       label 'sample-app'
@@ -101,3 +104,4 @@ spec:
     }
   }
 }
+
