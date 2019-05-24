@@ -2,7 +2,7 @@ apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
   creationTimestamp: null
-  name: backend-canary
+  name: flask-canary
 spec:
   replicas: 1
   strategy: {}
